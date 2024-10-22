@@ -1,0 +1,13 @@
+name: test
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        env:
+          SUPER_SECRET_KEY: ${{ secrets.SUPER_SECRET_KEY }}
+        run: |
+          touch $SUPER_SECRET_KEY
